@@ -15,6 +15,5 @@ zone "brick-vanroekel.sb.uclllabs.be" {
 
 zone "boris-michiels.sb.uclllabs.be" {
 	type slave;
-	file "/etc/bind/db.boris-michiels.sb.uclllabs.be";
 	masters {193.191.177.134;};
 };
