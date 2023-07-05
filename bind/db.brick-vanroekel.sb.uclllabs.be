@@ -5,21 +5,21 @@
 ;
 $TTL	86400
 $ORIGIN brick-vanroekel.sb.uclllabs.be.
-@	IN	SOA	brick-vanroekel.sb.uclllabs.be. root.brick-vanroekel.sb.uclllabs.be. (
+@	IN	SOA	ns.brick-vanroekel.sb.uclllabs.be. r0795577.ucll.be. (
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			  86400 )	; Negative Cache TTL
-;name servers
+;
 @	IN	NS	ns.brick-vanroekel.sb.uclllabs.be.
 ns	IN	AAAA	fe80::7ce5:3aff:fed1:844a
 @	IN	AAAA	fe80::7ce5:3aff:fed1:844a
 @	IN	NS	ns1.uclllabs.be
 @	IN	NS	ns2.uclllabs.be
-@	IN	NS	ns.boris-michiels.sb.uclllabs.be.
+@	IN	NS	boris-michiels.sb.uclllabs.be.
 
-;A records
+;
 @	IN	A	193.191.177.138
 ns      IN      A       193.191.177.138
 www	IN	A	193.191.177.138
