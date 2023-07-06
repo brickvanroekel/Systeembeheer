@@ -1,0 +1,31 @@
+key "certbot." {
+        algorithm hmac-sha512;
+        secret "EiJ1y9Q/9nY6zplPQ2YlEKd1io60e0QXfWbZOxEA1ExybsVdlXYpWZdQ3CkXsh3QrVg2b1M59XBtT3nOvdcE1w==";
+};
+
+zone "_acme-challenge.brick-vanroekel.sb.uclllabs.be" {
+        type master;
+        file "/var/lib/bind/brick-vanroekel.sb.uclllabs.be";
+        allow-query { any; };
+        update-policy {
+                grant certbot. name _acme-challenge.brick-vanroekel.sb.uclllabs.be. txt;
+        };
+};
+
+zone "_acme-challenge.secure.brick-vanroekel.sb.uclllabs.be" {
+        type master;
+        file "/var/lib/bind/secure.brick-vanroekel.sb.uclllabs.be";
+        allow-query { any; };
+        update-policy {
+                grant certbot. name _acme-challenge.secure.brick-vanroekel.sb.uclllabs.be. txt;
+        };
+};
+
+zone "_acme-challenge.supersecure.brick-vanroekel.sb.uclllabs.be" {
+        type master;
+        file "/var/lib/bind/supersecure.brick-vanroekel.sb.uclllabs.be";
+        allow-query { any; };
+        update-policy {
+                grant certbot. name _acme-challenge.supersecure.brick-vanroekel.sb.uclllabs.be. txt;
+        };
+};
