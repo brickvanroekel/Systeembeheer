@@ -33,3 +33,5 @@ mrt/
 bind/zones
 bind/named.conf.mrt-zones
 !apache2/
+!mysql/
+
