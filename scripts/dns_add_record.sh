@@ -5,30 +5,47 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-if [ "$1" == "-t" ]
-then
-        if [ "$2" == "A" ] || [ "$2" == "CNAME" ] || [ "$2" == "MX" ]
-        then
-                echo "type is correct"
-        else
-                echo "type is not correct"
-                exit 1
-        fi
+check_file () {
+    FNAME=${1##*/}
+    if [ $FNAME == "db.brick-vanroekel.sb.uclllabs.be" ]; then
+	FILE=/etc/bind/$FNAME
+    fi
+}
+
+if [ $1 != "-t" ]; then
+	FILE=/etc/bind/zones/db.$3
+	check_file $FILE
+        echo "$1	IN	A	$2" >> $FILE
 fi
 
-if ["$1"=="-t"]; then
-	if["$2"=="A"]; then
-		echo "$3.\tIN\tA\t$4" >> /etc/bind/db.${5%%.*}.be
-	fi
-	if["$2"=="CNAME"];then
-		echo "$3.\tIN\tCNAME\t$4" >> /etc/bind/db.${5%%.*}.be
-	fi
-	if["$2"=="MX"];then
-		echo "$3.\tIN\tA\t$4" >> /etc/bind/db.${5%%.*}.be
-                echo "$3.\tIN\tMX\t$4.brick-vanroekel.sb.uclllabs.be" >> /etc/bind/db.${5%%.*}.be
-	fi
-else
-	echo "$1.\tIN\tA\t$2" >> /etc/bind/db.${3%%.*}.be
-fi
+while getopts t: o; do
+    case "${o}" in
+        t)
+            TYPE=${OPTARG}
+	    if [[ ! $TYPE =~ (A|MX|CNAME) ]]; then 
+		{ echo "Wrong type"; exit 1; }
+	    fi
+            ;;
+    esac
+done
+
+case $TYPE in
+    A)
+	FILE=/etc/bind/zones/db.$5
+	check_file $FILE
+	echo "$3	IN	A	$4" >> $FILE
+	;;
+    CNAME)
+	FILE=/etc/bind/db.boris-michiels.sb.uclllabs.be
+	echo "$3	IN	CNAME	$4" >> $FILE
+	;;
+    MX)
+	FILE=/etc/bind/db.$5
+	echo "@	IN	MX	10	$3.$5.
+$3	IN	A	$4" >> $FILE
+	;;
+esac
+
+perl -i -pe '/Serial/ && s/(\d+)/$1+1/e' "$FILE"
 
 rndc reload
