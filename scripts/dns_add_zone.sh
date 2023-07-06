@@ -20,5 +20,8 @@ echo "\$TTL 900
 ;
 @	IN	NS	ns.brick-vanroekel.sb.uclllabs.be.
 ns	IN	A	193.191.177.138" > /etc/bind/zones/db.$1.brick-vanroekel.sb.uclllabs.be
+echo "$1	IN	NS	ns.brick-vanroekel.sb.uclllabs.be." >> /etc/bind/db.brick-vanroekel.sb.uclllabs.be
+perl -i -pe '/Serial/ && s/(\d+)/$1+1/e' "/etc/bind/db.brick-vanroekel.sb.uclllabs.be"
 
+rndc reload
 
