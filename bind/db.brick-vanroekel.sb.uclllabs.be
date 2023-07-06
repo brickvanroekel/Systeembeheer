@@ -25,3 +25,7 @@ www	IN	A	193.191.177.138
 test	IN	A	193.191.177.254
 www1	IN	A	193.191.177.138
 www2	IN      A       193.191.177.138
+
+secure	IN	A	193.191.177.138
+supersecure	IN	A	193.191.177.138
+_acme-challenge	300	IN	CNAME	31baee04-087e-422f-ad00-01cd5204e657.auth.acme-dns.io.				
