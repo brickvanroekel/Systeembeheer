@@ -5,7 +5,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.brick-vanroekel.sb.uclllabs.be. r0795577.ucll.be. (
-			    107		; Serial
+			    108		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -27,5 +27,12 @@ www1	IN	A	193.191.177.138
 www2	IN      A       193.191.177.138
 
 secure	IN	A	193.191.177.138
+secure	IN	CAA	0	issue	"letsencrypt.org"
+secure	IN	CAA	0	iodef	"mailto:brick-vanroekel@student.ucll.be"
+
+
 supersecure	IN	A	193.191.177.138
+supersecure	IN      CAA     0       issue   "letsencrypt.org"
+supersecure	IN      CAA     0       iodef   "mailto:brick-vanroekel@student.ucll.be"
+
 _acme-challenge	300	IN	CNAME	31baee04-087e-422f-ad00-01cd5204e657.auth.acme-dns.io.				
