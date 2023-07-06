@@ -5,7 +5,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.brick-vanroekel.sb.uclllabs.be. r0795577.ucll.be. (
-			    106		; Serial
+			    107		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -23,3 +23,5 @@ ns1	IN	A	193.191.176.254
 ns2	IN	A	193.191.177.4
 www	IN	A	193.191.177.138
 test	IN	A	193.191.177.254
+www1	IN	A	193.191.177.138
+www2	IN      A       193.191.177.138
