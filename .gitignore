@@ -32,3 +32,4 @@ mrt/
 !bind/
 bind/zones
 bind/named.conf.mrt-zones
+!apache2/
