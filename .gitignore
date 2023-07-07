@@ -36,3 +36,5 @@ bind/named.conf.mrt-zones
 apache2/sites-enabled
 !mysql/
 !letsencrypt/
+!postfix/
+
