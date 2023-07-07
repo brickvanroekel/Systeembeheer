@@ -36,3 +36,6 @@ supersecure	IN      CAA     0       issue   "letsencrypt.org"
 supersecure	IN      CAA     0       iodef   "mailto:brick-vanroekel@student.ucll.be"
 
 _acme-challenge	300	IN	CNAME	31baee04-087e-422f-ad00-01cd5204e657.auth.acme-dns.io.				
+
+@	IN	MX	10	mx
+mx	IN	A	193.191.177.138
