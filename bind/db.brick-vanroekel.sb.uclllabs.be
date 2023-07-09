@@ -39,3 +39,6 @@ _acme-challenge	300	IN	CNAME	31baee04-087e-422f-ad00-01cd5204e657.auth.acme-dns.
 
 @	IN	MX	10	mx
 mx	IN	A	193.191.177.138
+
+;AAA records
+
