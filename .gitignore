@@ -32,10 +32,12 @@ mrt/
 !bind/
 bind/zones
 bind/named.conf.mrt-zones
+bind/db.brick-vanroekel.sb.uclllabs.be
 !apache2/
 apache2/sites-enabled
 !mysql/
 !letsencrypt/
 !postfix/
 !dovecot/
+!vsftpd.conf
 
