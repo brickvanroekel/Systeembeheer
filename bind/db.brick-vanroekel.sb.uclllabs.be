@@ -41,4 +41,13 @@ _acme-challenge	300	IN	CNAME	31baee04-087e-422f-ad00-01cd5204e657.auth.acme-dns.
 mx	IN	A	193.191.177.138
 
 ;AAA records
-
+@               IN      AAAA    2001:6a8:2880:a077::8A		
+www             IN      AAAA    2001:6a8:2880:a077::8A
+mx              IN      AAAA    2001:6a8:2880:a077::8A
+ns              IN      AAAA    2001:6a8:2880:a077::8A
+ns1             IN      AAAA    2001:6a8:2880:a020::fe
+ns2             IN      AAAA    2001:6a8:2880:a021::4
+www1            IN      AAAA    2001:6a8:2880:a077::8A
+www2            IN      AAAA    2001:6a8:2880:a077::8A
+secure          IN      AAAA    2001:6a8:2880:a077::8A
+supersecure     IN      AAAA    2001:6a8:2880:a077::8A
