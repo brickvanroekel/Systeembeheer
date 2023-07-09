@@ -5,7 +5,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.brick-vanroekel.sb.uclllabs.be. r0795577.ucll.be. (
-			    108		; Serial
+			    109		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -40,7 +40,7 @@ _acme-challenge	300	IN	CNAME	31baee04-087e-422f-ad00-01cd5204e657.auth.acme-dns.
 @	IN	MX	10	mx
 mx	IN	A	193.191.177.138
 
-;AAA records
+;AAAA records
 @               IN      AAAA    2001:6a8:2880:a077::8A		
 www             IN      AAAA    2001:6a8:2880:a077::8A
 mx              IN      AAAA    2001:6a8:2880:a077::8A
@@ -49,5 +49,4 @@ ns1             IN      AAAA    2001:6a8:2880:a020::fe
 ns2             IN      AAAA    2001:6a8:2880:a021::4
 www1            IN      AAAA    2001:6a8:2880:a077::8A
 www2            IN      AAAA    2001:6a8:2880:a077::8A
-secure          IN      AAAA    2001:6a8:2880:a077::8A
-supersecure     IN      AAAA    2001:6a8:2880:a077::8A
+
